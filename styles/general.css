@@ -1,0 +1,60 @@
+:root {
+    /* Dark Mode Default */
+    --bg-color: #0f0f0f;
+    --header-color: #212121;
+    --sidebar-color: #212121;
+
+    --text-color: #ffffff;
+    --secondary-text: #aaaaaa;
+
+    --border-color: #3a3a3a;
+    --input-bg: #121212;
+    --button-bg: #222222;
+    --input-border: #3f3f3f;
+}
+
+body.light-mode {
+    --bg-color: #ffffff;
+    --header-color: #ffffff;
+    --sidebar-color: #ffffff;
+
+    --text-color: #0f0f0f;
+    --secondary-text: #606060;
+
+    --border-color: #d3d3d3;
+    --input-bg: #ffffff;
+    --button-bg: #f0f0f0;
+    --input-border: #d3d3d3;
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+p {
+    font-family: Roboto, Time New Roman;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+body {
+    font-family: Roboto, Arial;
+    margin: 0;
+    padding-top: 80px;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-bottom: 16px;
+
+    background-color: var(--bg-color);
+    color: var(--text-color);
+
+    transition: background-color 0.3s,
+                color 0.3s;
+}
+
+@media (min-width: 768px) {
+    body {
+        padding-left: 96px;
+    }
+}

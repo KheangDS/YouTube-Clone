@@ -1,0 +1,113 @@
+* {
+    box-sizing: border-box;
+}
+
+/* .thumbnail {
+    width: 100%;
+} */
+.thumbnail {
+    width: 100%;
+    display: block;
+    aspect-ratio: 16 / 9; /* Forces images to preserve perfect video format ratios */
+    object-fit: cover;
+    border-radius: 12px;
+}
+.video-title {
+    margin-top: 0;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    margin-bottom: 10px;
+    color: var(--text-color);
+}
+.video-author, /* apply multiple properties to multiple elements */
+.video-stats { 
+    font-size: 12px;
+    color: var(--secondary-text);
+} 
+.video-author {
+    margin-bottom: 2px;
+}
+
+.thumbnail-row {
+    margin-bottom: 8px;
+    position: relative;
+}
+/* .channel-img {
+    display: inline-block;
+    width: 50px;
+    vertical-align: top;
+} */
+.channel-img {
+    flex-shrink: 0; /* Prevents the avatar circle from distorting */
+}
+/* .video-info {
+    display: inline-block;
+    width: 200px;
+} */
+.video-info {
+    flex: 1; /* REMOVED width: 200px; Let information dynamically use available width */
+}
+/* .channel-icon {
+    width: 36px;
+    border-radius: 50px;
+} */
+.channel-icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+/* .video-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    column-gap: 16px;
+    row-gap: 40px;
+} */
+
+/* Make responsive video grid that automatically fits as many columns as possible, ensuring cards never drop below 250px */
+.video-grid {
+    display: grid;
+    /* This line automatically changes the number of columns based on screen size */
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    column-gap: 16px;
+    row-gap: 40px;
+}
+
+
+.video-time {
+    font-size: 12px;
+    font-weight: 500;
+    padding: 4px;
+    border-radius: 2px;
+    background-color: black;
+    color: white;
+    position: absolute;
+    bottom: 8px;
+    right: 5px;
+}
+
+/* Flexbox Layout for Channel avatar next to titles */
+.video-info-grid {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+}
+
+/* --- MEDIA QUERY FOR TABLETS & DESKTOPS --- */
+@media (min-width: 768px) {
+    .sidebar {
+        display: block; /* Shows sidebar back when room allows */
+    }
+}
+
+/* Extra Mobile Cleanup: Hide icons inside header on small devices to keep things roomy */
+@media (max-width: 500px) {
+    .voice-search-button, .youtube-app-icon {
+        display: none;
+    }
+    .middle-section {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}

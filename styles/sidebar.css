@@ -1,0 +1,49 @@
+* {
+    box-sizing: border-box;
+}
+
+.sidebar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    top: 55px;
+    background-color: var(--sidebar-color);
+    width: 72px;
+    z-index: 2000;
+    padding-top: 5px;
+    display: none;
+    color: var(--text-color);
+}
+
+.sidebar-link {
+    height: 74px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.sidebar-link:hover {
+    background-color: rgb(235, 235, 235);
+}
+
+/* target all image in sidebar-link class */
+.sidebar-link img {
+    height: 24px;
+    margin-bottom: 4px;
+}
+
+.sidebar-link div {
+    font-size: 10px;
+}
+
+
+
+/* 2. Desktop style at the absolute bottom of the same file */
+@media (min-width: 768px) {
+    .sidebar {
+        display: block; 
+        margin-right: 10px;
+    }
+}
